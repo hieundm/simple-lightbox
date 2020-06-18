@@ -1,6 +1,6 @@
 .lightbox{
     position: fixed;
-    z-index: 100000;
+    z-index: -1;
     background-color: black;
     width: 100%;
     height: 100%;
@@ -15,6 +15,7 @@
 .lightbox--show{
   visibility: visible;
   opacity: 1;
+  z-index: 100000;
   transition: visibility 0s linear 0s, opacity 300ms;
 }
 
@@ -55,7 +56,8 @@
   padding: 0 5px;
 }
 
-.lightbox__button-close {
+.lightbox__button-close,
+.lightbox__button-zoom {
     width: 32px;
     height: 32px;
     background: none;
@@ -63,8 +65,23 @@
     outline: none;
   }
 
-  .lightbox__button-close:hover{
+  .lightbox__button-close:hover,
+  .lightbox__button-zoom:hover{
     opacity: 0.8;
+  }
+
+  .lightbox__button-close:focus,
+  .lightbox__button-zoom:focus{
+    outline: none;
+  }
+
+  .lightbox__button-zoom svg{
+    height: 20px;
+    width: 20px;
+  }
+
+  .lightbox__button-zoom svg path{
+    fill: white;
   }
 
   .lightbox__item{
@@ -84,6 +101,16 @@
 
   .lightbox__item img{
     max-width: 100%;
+  }
+
+  .lightbox__item figure{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 500000;
+    width: 100%;
+    height: 100%;
+    cursor: move;
   }
 
   .lightbox__description{
@@ -110,7 +137,7 @@
     outline: none;
     width: 50px;
     height: 100%;
-    transition: all ease-in-out 0.3s;
+    transition: background-color ease-in-out 0.3s;
     background-color: rgba(0, 0, 0, 0.2);
   }
 
@@ -130,7 +157,7 @@
 
   .lightbox__button-prev:hover,
   .lightbox__button-next:hover{
-    background-color:  rgb(15, 15, 15, 0.7);
+    background-color:  rgb(15, 15, 15, 0.3);
   }
 
   .lightbox__button-prev:focus,
