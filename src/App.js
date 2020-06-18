@@ -1,25 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Button , Col, Container, Row, Navbar } from 'react-bootstrap';
+import SimpleLightbox from './components/simple-lightbox';
 import './App.css';
+import './components/simple-lightbox/index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import logo from "./logo.svg";
 
 function App() {
+
+  const [canShow, setCanShow] = React.useState(false);
+
+  const onClickToogle = () => {
+    setCanShow(!canShow);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar.Brand href="#home">
+          <img
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="React Bootstrap logo"
+          />
+        Simple Lightbox
+      </Navbar.Brand>
+      </Navbar>
+      <Container>
+        <Row>
+          <Col md={12}>
+            <Button variant="primary" onClick={() => onClickToogle()}>Click me :D</Button>
+            <SimpleLightbox canShow={canShow} onClose={() => onClickToogle()}/>
+          </Col>
+        </Row>
+      </Container>
+    </React.Fragment>
   );
 }
 
