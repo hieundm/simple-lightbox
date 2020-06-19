@@ -2,6 +2,11 @@ import React from "react";
 
 const data = [
     {
+        code: "KKc_RMln5UY",
+        type: "youtube-video",
+        description: "123afa"
+    },
+    {
         url: "https://webneel.com/wallpaper/sites/default/files/images/08-2018/2-nature-wallpaper-grass.jpg",
         type: "photo",
         description: "abc"
@@ -12,6 +17,36 @@ const data = [
         description: "efg"
     }
 ]
+
+const ZOOM_IN_ICON = (
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 478.208 478.208">
+        <g>
+            <g>
+                <path d="M473.418,449.285L303.28,279.148c59.759-73.087,48.954-180.779-24.132-240.538S98.369-10.344,38.61,62.742    S-10.344,243.521,62.742,303.28c62.953,51.473,153.453,51.473,216.406,0l170.138,170.138c6.78,6.548,17.584,6.36,24.132-0.42    C479.805,466.384,479.805,455.899,473.418,449.285z M171.218,307.751c-75.37-0.085-136.449-61.163-136.533-136.533    c0-75.405,61.128-136.533,136.533-136.533s136.533,61.128,136.533,136.533S246.623,307.751,171.218,307.751z" />
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M256.551,154.151h-68.267V85.885c0-9.426-7.641-17.067-17.067-17.067s-17.067,7.641-17.067,17.067v68.267H85.885    c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h68.267v68.267c0,9.426,7.641,17.067,17.067,17.067    s17.067-7.641,17.067-17.067v-68.267h68.267c9.426,0,17.067-7.641,17.067-17.067S265.977,154.151,256.551,154.151z" />
+            </g>
+        </g>
+    </svg>
+);
+
+const ZOOM_OUT_ICON = (
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 478.208 478.208">
+        <g>
+            <g>
+                <path d="M473.418,449.285L303.28,279.148c59.759-73.087,48.954-180.779-24.132-240.538S98.369-10.344,38.61,62.742    S-10.344,243.521,62.742,303.28c62.953,51.473,153.453,51.473,216.406,0l170.138,170.138c6.78,6.548,17.584,6.36,24.132-0.42    C479.805,466.384,479.805,455.899,473.418,449.285z M171.218,307.751c-75.37-0.085-136.449-61.163-136.533-136.533    c0-75.405,61.128-136.533,136.533-136.533s136.533,61.128,136.533,136.533S246.623,307.751,171.218,307.751z" />
+            </g>
+        </g>
+        <g>
+            <g>
+                <path d="M256.551,154.151H85.885c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h170.667    c9.426,0,17.067-7.641,17.067-17.067S265.977,154.151,256.551,154.151z" />
+            </g>
+        </g>
+    </svg>
+);
 
 export default function SimpleLightbox({ canShow, onClose }) {
 
@@ -121,48 +156,13 @@ export default function SimpleLightbox({ canShow, onClose }) {
                 </div>
                 <div>
                     <button className="lightbox__button-zoom" onClick={() => onClickToogleZoom()}>
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 478.208 478.208">
-                            <g>
-                                <g>
-                                    <path d="M473.418,449.285L303.28,279.148c59.759-73.087,48.954-180.779-24.132-240.538S98.369-10.344,38.61,62.742    S-10.344,243.521,62.742,303.28c62.953,51.473,153.453,51.473,216.406,0l170.138,170.138c6.78,6.548,17.584,6.36,24.132-0.42    C479.805,466.384,479.805,455.899,473.418,449.285z M171.218,307.751c-75.37-0.085-136.449-61.163-136.533-136.533    c0-75.405,61.128-136.533,136.533-136.533s136.533,61.128,136.533,136.533S246.623,307.751,171.218,307.751z" />
-                                </g>
-                            </g>
-                            <g>
-                                <g>
-                                    <path d="M256.551,154.151h-68.267V85.885c0-9.426-7.641-17.067-17.067-17.067s-17.067,7.641-17.067,17.067v68.267H85.885    c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h68.267v68.267c0,9.426,7.641,17.067,17.067,17.067    s17.067-7.641,17.067-17.067v-68.267h68.267c9.426,0,17.067-7.641,17.067-17.067S265.977,154.151,256.551,154.151z" />
-                                </g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                            <g>
-                            </g>
-                        </svg>
+                        {
+                            canZoom === true
+                                ?
+                                ZOOM_OUT_ICON
+                                :
+                                ZOOM_IN_ICON
+                        }
                     </button>
                     <button className="lightbox__button-close" onClick={() => onClose()}>
                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,12 +179,23 @@ export default function SimpleLightbox({ canShow, onClose }) {
                                 className={`lightbox__item ${currentIndex === index ? "lightbox__item--active" : ""}`}
                                 onTouchStart={(event) => handleTouchStart(event)}
                                 onTouchMove={(event) => handleTouchMove(event)}>
-                                <img src={item.url} alt={index} />
                                 {
-                                    canZoom === true
-                                    &&
-                                    <figure onMouseMove={(event) => handleMouseMove(event)} style={{ backgroundImage: `url(${item.url})`, backgroundPosition: backgroundPosition }}>
-                                    </figure>
+                                    item.type === "photo"
+                                        ?
+                                        <React.Fragment>
+                                            <img src={item.url} alt={index} />
+                                            {
+                                                canZoom === true
+                                                &&
+                                                <figure onMouseMove={(event) => handleMouseMove(event)} style={{ backgroundImage: `url(${item.url})`, backgroundPosition: backgroundPosition }}>
+                                                </figure>
+                                            }
+                                        </React.Fragment>
+                                        :
+                                        <div className="lightbox__youtube-wrapper">
+                                            <iframe title="youtube" width="100%" height="100%" src={`https://www.youtube.com/embed/${item.code}`}
+                                                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
                                 }
                             </div>
                         ))
@@ -200,9 +211,9 @@ export default function SimpleLightbox({ canShow, onClose }) {
                         </svg>
                     </button>
                 </div>
-                <div className="lightbox__description">
-                    {data[currentIndex].description}
-                </div>
+            </div>
+            <div className="lightbox__description">
+                {data[currentIndex].description}
             </div>
         </div >
     );
